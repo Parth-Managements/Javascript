@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: lightseagreen;
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    #blur {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+    }
+
+    #Grayscale {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+
+    }
+
+    #Brightness {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+
+    }
+
+    #Contrast {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+
+    }
+
+    #Hue-rotate {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+
+    }
+
+    #Invert {
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+
+    }
+
+    #container2 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #img2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #img
+    {
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <h1> Images Editor - Javascript</h1>
+    </div>
+    <hr>
+
+    <div id="container2">
+        <button id="blur">Blur</button>
+        <button id="Grayscale">Grayscale</button>
+        <button id="Brightness">Brightness</button>
+        <button id="Contrast">Contrast</button>
+        <button id="Hue-rotate">Hue-rotate</button>
+        <button id="Invert">Invert</button>
+    </div>
+    <div id="img2">
+        <img src="./Images/5.jpeg" alt="" id="img" style="width: 300px; height: 300px;">
+    </div>
+</body>
+<script>
+    document.getElementById('blur').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "blur(3px)")
+    document.getElementById('Grayscale').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "grayscale(100%)")
+    document.getElementById('Brightness').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "brightness(200%)")
+    document.getElementById('Contrast').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "contrast(200%)")
+    document.getElementById('Hue-rotate').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "hue-rotate(200deg)")
+    document.getElementById('Invert').addEventListener('click', () =>
+        document.getElementById('img').style.filter = "invert(100%)")
+
+
+
+</script>
+
+</html>

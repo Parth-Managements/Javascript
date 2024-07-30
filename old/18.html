@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="f">
+        <table>
+            <tr>
+                <td>Enter the value of a : <input type="text" name="a" id="" >
+                Enter the value of b : <input type="text" name="b" id="" ></td>
+            </tr>
+            <tr>
+                <td>Choose  :
+                    <input type="checkbox" name="c" value="B">Addition
+                    <input type="checkbox" name="c" value="G"> Subraction
+                    <input type="checkbox" name="c" value="O"> Multiplication
+                    <input type="checkbox" name="c" value="Y"> Division
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="color()" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+<p id="ans"></p>
+
+<script>
+    function color() {
+
+        x = document.f
+        let k = ''
+        let a=parseInt(document.f.a.value)
+        let b=parseInt(document.f.b.value)
+
+        key = ''
+       
+
+
+
+        for (let i = 0; i < x.c.length; i++) {
+            if (x.c[i].checked) {
+                k = x.c[i].value
+
+
+                if (k == 'B') {
+                    d = a+b
+                   key += document.getElementById('ans').innerHTML = "Addition:" + d + "<br>" 
+
+                }
+                if (k == 'G') {
+                    d = a-b
+                   key += document.getElementById('ans').innerHTML = "Subraction:" + d + "<br>"
+                }
+                if (k == 'O') {
+                    d = a*b
+                   key+= document.getElementById('ans').innerHTML = "Multiplication:" + d + "<br>"
+                }
+                if (k == 'Y') {
+                    d = a/b
+                    key+= document.getElementById('ans').innerHTML = "Division:" + d + "<br>"
+                }
+
+                document.getElementById('ans').innerHTML = key 
+            }
+        }
+
+
+
+        
+    
+
+
+
+    }
+</script>
+
+</html>

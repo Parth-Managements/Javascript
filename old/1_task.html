@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Input Value Example</title> 
+</head> 
+  
+<body> 
+    <form action="" name="f">
+        
+        <div>
+            <label for="">Enter the sentence</label>
+            <input type="text" name="" id="sent">
+        </div>
+        <div>
+            <label for="">Enter the start index</label>
+            <input type="text" name="" id="inp">
+        </div>
+        <div>
+            <label for="">Enter the end index</label>
+            <input type="text" name="" id="inp2">
+        </div>
+        <span>
+            <input type="button" value="Submit" name="" id="" onclick="push()">
+        </span>
+    </form>
+
+
+
+<p id="ans"></p>
+  
+</body> 
+<script>
+
+    let a = []
+    function push() { 
+        let value = document.f.sent.value
+        let a = parseInt( document.f.inp.value)
+        let b = parseInt( document.f.inp2.value)
+
+        if(a<0 || b<0 || a>value.length || b.length>value.length)
+        {
+            document.getElementById('ans').innerHTML = "Out of Range !! Out of Range !! Out of Range !!"
+        }
+        
+        else{
+        document.getElementById('ans').innerHTML = value.slice(a,b)
+        }
+    } 
+</script> 
+
+</html>

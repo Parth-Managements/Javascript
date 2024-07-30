@@ -1,0 +1,618 @@
+<html>
+
+<head>
+    <title>Form</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <br><br><br><br>
+    <form name="f">
+        <table align="center">
+            <tr>
+                <td><label for="fname"> First Name</label></td>
+                <td><input type="text" name="fname" id="fname" onblur="validatefn()">
+                    <!-- <p>First Name is Required</p> -->
+                    <!-- <div>First Name is Required</div> -->
+                    <span id="errFn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Last Name</label></td>
+                <td><input type="text" name="lname" onfocus="validateln()">
+                    <span id="errLn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="g" value="m" onselect="validategn()"> Male
+                    <input type="radio" name="g" value="f" onselect="validategn()">Female
+                    <span id="errGen"></span>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td>Contact No</td>
+                <td><input type="tel" name="cn" onkeyup="validatecn()">
+                    <span id="errCn"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td><input type="checkbox" name="h" value="sp"> sports
+                    <input type="checkbox" name="h" value="mu">music
+                    <input type="checkbox" name="h" value="dr">Drawing
+                    <span id="errHby"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Email id</td>
+                <td><input type="email" name="em" onkeydown="validatemail()">
+                    <span id="errEmail"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd" onkeypress="validatepwd()">
+                    <span id="errPwd"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="cpwd">
+                    <span id="errCPwd"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Country</td>
+                <td><select name="na" onchange="validatena()">
+                        <option value="0">---Select---</option>
+                        <option value="in">India</option>
+                        <option value="ne">Nepal</option>
+                        <option value="bh">Bhutan</option>
+                        <option value="pa">Pakistan</option>
+                    </select>
+                    <span id="errNa"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter wesite</td>
+                <td><input type="url" id="website"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="address" id="#" cols="25" rows="3"></textarea></td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <button type="button" onclick="isvalid()">Check</button>
+                    <span id="checkvalid"></span>
+                </td>
+                <td colspan="2" align="center"> <input type="button" value="Submit"
+                        onclick="valdate()">&nbsp;&nbsp;&nbsp;<input type="reset"></td>
+            </tr>
+
+        </table>
+        <span id="disp"></span>
+    </form>
+    <br>
+    <br><br><br><br>
+
+    <script>
+        function valdate() {
+            let fname = document.f.fname.value
+            let lname = document.f.lname.value
+            let cn = document.f.cn.value
+            let pwd = document.f.pwd.value
+            let cpwd = document.f.cpwd.value
+            let em = document.f.em.value
+            console.log("-->", fname)
+            let isErr = false
+            let msg = " "
+
+            let textonly = /^[a-zA-Z]+$/
+            let digitsOnly = /^[0-9]+$/
+
+            // /^[0-9]+$/
+            let emailCheck = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+            // abc@gmail.com
+            // [a-z0-9]@[a-z].[a-z]
+            { 6 }
+
+
+
+            if (fname == "" || fname.trim().length == 0) {
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errFn').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if (textonly.test(fname) == false) {
+                document.getElementById('errFn').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('errFn').innerHTML = " "
+            }
+
+            if (lname == "" || lname.trim().length == 0) {
+                // alert("Last Name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+
+                document.getElementById('errLn').innerHTML = "* Last Name is Required"
+            }
+            else if (textonly.test(lname) == false) {
+                document.getElementById('errLn').innerHTML = "* Text Only"
+            }
+            else {
+                document.getElementById('errLn').innerHTML = " "
+            }
+
+            let cnt = 0
+
+            for (let i = 0; i < document.f.g.length; i++) {
+                if (document.f.g[i].checked) {
+                    cnt++
+                }
+            }
+            if (cnt == 0) {
+                document.getElementById('errGen').innerHTML = "* Gender is Required"
+            }
+            else {
+                document.getElementById('errGen').innerHTML = " "
+            }
+
+            // if(isErr){
+            //     alert(msg)
+            // }
+            let cntr = 0
+
+            for (let i = 0; i < document.f.h.length; i++) {
+                if (document.f.h[i].checked) {
+                    cntr++
+                }
+            }
+            if (cntr == 0) {
+                document.getElementById('errHby').innerHTML = "* Hobbies are Required"
+            }
+            else {
+                document.getElementById('errHby').innerHTML = " "
+            }
+
+            let nationality = document.f.na.value
+            console.log(nationality)
+
+            if (nationality == '0') {
+                document.getElementById('errNa').innerHTML = "* Nationality is Required"
+
+            }
+            else {
+                document.getElementById('errNa').innerHTML = " "
+            }
+
+            if (cn == "" || cn.trim().length == 0) {
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+            // else if(cn.length != 10){
+            //     document.getElementById('errCn').innerHTML = " * Cno should be 10 digits"
+            // }
+            else if (digitsOnly.test(cn) == false) {
+                document.getElementById('errCn').innerHTML = " Digits Only"
+            }
+            else {
+                document.getElementById('errCn').innerHTML = " "
+            }
+
+            if (pwd == "" || pwd.trim().length == 0) {
+                document.getElementById('errPwd').innerHTML = " * Password is Required"
+            }
+
+            if (cpwd == "" || cpwd.trim().length == 0) {
+                document.getElementById('errCPwd').innerHTML = " *Confirm Password is Required"
+            }
+            else if (pwd != cpwd) {
+                document.getElementById('errPwd').innerHTML = "* pwd and cpwd should be same"
+            }
+
+            if (em.trim().length == 0) {
+                document.getElementById('errEmail').innerHTML = " * Email is Required"
+            }
+            else if (emailCheck.test(em) == false) {
+                document.getElementById('errEmail').innerHTML = " * Enter valid email id"
+            }
+            else {
+                document.getElementById('errEmail').innerHTML = " "
+            }
+
+        }
+
+        function validatefn() {
+            let fname = document.f.fname.value
+            let textonly = /^[a-zA-Z]+$/
+
+            if (fname == "" || fname.trim().length == 0) {
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errFn').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if (textonly.test(fname) == false) {
+                document.getElementById('errFn').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('errFn').innerHTML = " "
+            }
+
+        }
+
+        function validatena() {
+            let nationality = document.f.na.value
+
+
+            if (nationality == '0') {
+                document.getElementById('errNa').innerHTML = "* Nationality is Required"
+
+            }
+            if (nationality == 'in') {
+                document.getElementById('errNa').innerHTML = "India has been selected"
+            }
+            if (nationality == 'ne') {
+                document.getElementById('errNa').innerHTML = "Nepal has been selected"
+            }
+            if (nationality == 'bh') {
+                document.getElementById('errNa').innerHTML = "Bhutan has been selected"
+            }
+            if (nationality == 'pa') {
+                document.getElementById('errNa').innerHTML = "Pakistan has been selected"
+            }
+        }
+
+        function validateln() {
+            let lname = document.f.lname.value
+            let textonly = /^[a-zA-Z]+$/
+
+            if (lname == "" || lname.trim().length == 0) {
+                // alert("Last Name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+
+                document.getElementById('errLn').innerHTML = "* Last Name is Required"
+            }
+            else if (textonly.test(lname) == false) {
+                document.getElementById('errLn').innerHTML = "* Text Only"
+            }
+            else {
+                document.getElementById('errLn').innerHTML = " "
+            }
+
+        }
+
+        function validategn() {
+
+            let cnt = 0
+
+            for (let i = 0; i < document.f.g.length; i++) {
+                if (document.f.g[i].checked) {
+                    cnt++
+                }
+            }
+            if (cnt == 0) {
+                document.getElementById('errGen').innerHTML = "* Gender is Required"
+            }
+            else {
+                document.getElementById('errGen').innerHTML = " "
+            }
+
+        }
+
+        function validatepwd() {
+            let pwd = document.f.pwd.value
+
+            if (pwd == "" || pwd.trim().length == 0) {
+                document.getElementById('errPwd').innerHTML = " * Password is Required"
+            }
+            if (pwd.length < 8) {
+                document.getElementById('errPwd').innerHTML = " * Your password is too weak"
+
+            }
+            if (pwd.length > 8) {
+                document.getElementById('errPwd').innerHTML = " "
+
+            }
+
+        }
+        function validatecn() {
+            let cn = document.f.cn.value
+            let digitsOnly = /^[0-9]+$/
+
+            if (cn == "" || cn.trim().length == 0) {
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+            // else if(cn.length != 10){
+            //     document.getElementById('errCn').innerHTML = " * Cno should be 10 digits"
+            // }
+            else if (digitsOnly.test(cn) == false) {
+                document.getElementById('errCn').innerHTML = " Digits Only"
+            }
+            else {
+                document.getElementById('errCn').innerHTML = " "
+            }
+        }
+
+        function validatemail() {
+            let em = document.f.em.value
+            let emailCheck = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+
+            if (em.trim().length == 0) {
+                document.getElementById('errEmail').innerHTML = " * Email is Required"
+            }
+            else if (emailCheck.test(em) == false) {
+                document.getElementById('errEmail').innerHTML = " * Enter valid email id"
+            }
+            else {
+                document.getElementById('errEmail').innerHTML = " "
+            }
+
+
+        }
+
+        function isvalid() {
+            let fname = document.f.fname.value
+            let lname = document.f.lname.value
+            let cn = document.f.cn.value
+            let pwd = document.f.pwd.value
+            let cpwd = document.f.cpwd.value
+            let em = document.f.em.value
+
+            let isErr = false
+            let msg = " "
+            let key = " "
+
+            let flag1 = false
+            let flag2 = false
+            let flag3 = false
+            let flag4 = false
+            let flag5 = false
+            let flag6 = false
+            let flag7 = false
+            let flag8 = false
+            let flag9 = false
+            let flag10 = false
+
+
+            let textonly = /^[a-zA-Z]+$/
+            let digitsOnly = /^[0-9]+$/
+
+            // /^[0-9]+$/
+            let emailCheck = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+
+            if (fname == "" || fname.trim().length == 0) {
+                // alert("First Name is Required")
+                // isErr = true
+                // msg += "\n First Name is Required."
+                document.getElementById('errFn').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+            else if (textonly.test(fname) == false) {
+                document.getElementById('errFn').innerHTML = "<font color='red'>* Text Only</font>"
+            }
+            else {
+                document.getElementById('errFn').innerHTML = " "
+                flag1 = true
+                key += document.getElementById('disp').innerHTML = "First Name : " + fname + "<br>"
+
+            }
+
+            if (lname == "" || lname.trim().length == 0) {
+                // alert("Last Name is Required")
+                // isErr = true
+                // msg += "\nLast name is Required"
+
+                document.getElementById('errLn').innerHTML = "* Last Name is Required"
+            }
+            else if (textonly.test(lname) == false) {
+                document.getElementById('errLn').innerHTML = "* Text Only"
+            }
+            else {
+                document.getElementById('errLn').innerHTML = " "
+                flag2 = true
+                key += document.getElementById('disp').innerHTML = "Last Name : " + lname + "<br>"
+            }
+
+            let cnt = 0
+
+            let gender = document.f.g.value
+            console.log(gender)
+            for (let i = 0; i < document.f.g.length; i++) {
+                if (document.f.g[i].checked) {
+                    cnt++
+                }
+            }
+            if (cnt == 0) {
+                document.getElementById('errGen').innerHTML = "* Gender is Required"
+            }
+            else if (gender == 'm') {
+                flag3 = true
+                document.getElementById('errGen').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Gender : " + "Male" + "<br>"
+            }
+            else if (gender == 'f') {
+                flag3 = true
+                document.getElementById('errGen').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Gender : " + "FeMale" + "<br>"
+            }
+
+            // if(isErr){
+            //     alert(msg)
+            // }
+            if (cn == "" || cn.trim().length == 0) {
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+            // else if(cn.length != 10){
+            //     document.getElementById('errCn').innerHTML = " * Cno should be 10 digits"
+            // }
+            else if (digitsOnly.test(cn) == false) {
+                document.getElementById('errCn').innerHTML = " Digits Only"
+            }
+            else {
+                document.getElementById('errCn').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Contact No : " + cn + "<br>"
+                flag6 = true
+
+            }
+            let cntr = 0
+
+            for (let i = 0; i < document.f.h.length; i++) {
+                if (document.f.h[i].checked) {
+                    let temp = document.f.h[i].value
+
+                    if (temp == 'sp') {
+                        cntr++
+                        flag4 = true
+                        document.getElementById('errHby').innerHTML = " "
+                        key += document.getElementById('disp').innerHTML = "Hobbies : Sports"
+                    }
+
+                    if (temp == 'mu') {
+                        cntr++
+                        console.log(cntr)
+                        if (cntr == 2 || cntr == 3) {
+                            flag4 = true
+                            document.getElementById('errHby').innerHTML = " "
+                            key += document.getElementById('disp').innerHTML = " , Music" 
+                        }
+                        else {
+                            flag4 = true
+                            document.getElementById('errHby').innerHTML = " "
+                            key += document.getElementById('disp').innerHTML = "Hobbies : Music" 
+                        }
+                    }
+                    if (temp == 'dr') {
+                        cntr++
+                        if (cntr == 2 || cntr == 3) {
+                            flag4 = true
+                            document.getElementById('errHby').innerHTML = " "
+                            key += document.getElementById('disp').innerHTML = " , Drawing" 
+                        }
+                        else {
+                            flag4 = true
+                            document.getElementById('errHby').innerHTML = " "
+                            key += document.getElementById('disp').innerHTML = "Hobbies : Drawing" 
+                        }
+                    }
+
+                }
+            }
+            if (cntr == 0) {
+                document.getElementById('errHby').innerHTML = "* Hobbies are Required"
+            }
+
+
+            if (em.trim().length == 0) {
+                document.getElementById('errEmail').innerHTML = " * Email is Required"
+            }
+            else if (emailCheck.test(em) == false) {
+                document.getElementById('errEmail').innerHTML = " * Enter valid email id"
+            }
+            else {
+                key += document.getElementById('disp').innerHTML = "<br>" + "Email : " + em + "<br>"
+                document.getElementById('errEmail').innerHTML = " "
+                flag9 = true
+            }
+            let nationality = document.f.na.value
+
+
+
+
+            if (pwd == "" || pwd.trim().length == 0) {
+                document.getElementById('errPwd').innerHTML = " * Password is Required"
+            }
+            else if (pwd.length < 8) {
+                document.getElementById('errPwd').innerHTML = " * Your password is too weak"
+            }
+            else {
+                document.getElementById('errPwd').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Password : " + pwd + "<br>"
+                flag7 = true
+            }
+
+
+            if (cpwd == "" || cpwd.trim().length == 0) {
+                document.getElementById('errCPwd').innerHTML = " *Confirm Password is Required"
+            }
+            else if (pwd != cpwd) {
+                document.getElementById('errCPwd').innerHTML = "* pwd and cpwd should be same"
+            }
+            else {
+                key += document.getElementById('disp').innerHTML = "Confirm Password : " + cpwd + "<br>"
+
+                document.getElementById('errCPwd').innerHTML = " "
+                flag8 = true
+            }
+
+            if (nationality == '0') {
+                document.getElementById('errNa').innerHTML = "* Nationality is Required"
+            }
+            if (nationality == 'in') {
+                document.getElementById('errNa').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Nationality : " + "Indian" + "<br>"
+                flag5 = true
+
+            }
+            if (nationality == 'ne') {
+                document.getElementById('errNa').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Nationality : " + "Nepal" + "<br>"
+
+                flag5 = true
+
+            }
+            if (nationality == 'bh') {
+                document.getElementById('errNa').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Nationality : " + "Bhutan" + "<br>"
+
+                flag5 = true
+
+            }
+            if (nationality == 'pa') {
+                document.getElementById('errNa').innerHTML = " "
+                key += document.getElementById('disp').innerHTML = "Nationality : " + "Paakistan" + "<br>"
+                flag5 = true
+            }
+
+            let web = document.f.website.value
+            if(web.trim().length == 0)
+            {
+                
+            }
+            else
+            {
+                flag10 = true
+                key += document.getElementById('disp').innerHTML = "Website : " + web + "<br>"
+            }
+
+
+            if (flag1 == true && flag2 == true && flag3 == true && flag4 == true && flag5 == true && flag6 == true && flag7 == true && flag8 == true && flag9 == true && flag10 == true) {
+                document.getElementById('checkvalid').innerHTML = "Submitted values are correct"
+                document.getElementById('disp').innerHTML = key
+            }
+            else {
+                document.getElementById('checkvalid').innerHTML = "Submitted values are not correct"
+                document.getElementById('disp').innerHTML = " "
+            }
+
+
+
+        }
+    </script>
+</body>
+
+</html>

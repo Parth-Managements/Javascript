@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Array
+    // int a[5]={11,22,33}
+    let a = [11, 33, 44, 55, 77, 'royal', true, 77.8]
+    console.log(a)
+    document.write("Array: " + a)
+    document.write("<br>Array a[3] : " + a[3])
+
+    for (let i = 0; i < a.length; i++) {
+        document.write("<br> a " + a[i])
+    }
+
+    a.push(88)
+    // insert an element on last index
+    document.write("<br> array a : " + a)
+
+
+    a.pop()
+    // remonve an element from last index
+    document.write("<br>pop array a : " + a)
+
+    // a.slice(2,6)
+    document.write("<br>Slice : "+a.slice(2,5))
+    // index 2 nd to 4 th : 5th will ommitted
+    document.write("<br> Slilce : "+a.slice(4))
+    document.write("<br> Slilce : "+a.slice(-3))
+    document.write("<br> Slilce : "+a.slice(-4,-2))
+
+    // shift() unshift()
+    a.shift()
+    // remove an element from 0th index
+    document.write("<br> Shift : "+a.shift())
+    document.write("<br> Shift : "+a)
+    a.unshift(9999)
+    // insert an element on 0th iondex
+    document.write("<br> Shift : "+a)
+
+    // document.write("<br> Reverse : "+a.reverse())
+    // document.write("<br> rev: "+a)
+
+    document.write("<br> index of: "+a.indexOf(55))
+    // it will return index if match found otherwise return -1
+
+    document.write("<br> includes : "+a.includes(55))
+    // return true or false
+
+    // document.write("<br> Splice : "+a.splice(2,2,'$$$$','%%%'))
+    // index 
+    // document.write("<br> Splice : "+a.splice(2,1,'$$$$','%%%'))
+    // document.write("<br> Splice : "+a.splice(2,0,'$$$$','%%%'))
+    document.write("<br> Splice : "+a.splice(2,4,'$$$$','%%%'))
+
+
+    document.write("<br> splice :" + a)
+
+    let arr = [11,55,166,88,122]
+    let arr1 = ['royal','tech','soft','pvt']
+    // arr.sort()
+    // document.write("<br> sort :" + arr)
+
+    // let arr2 = a.concat(arr)
+    let arr2 = a.concat(arr,arr1,a)
+    document.write("<br> Concate : "+arr2)
+
+</script>
+
+</html>
+
+<!-- 
+    task : 23-04-24
+    1. 4 radio button 
+            for array : take values from user
+        1. insert at begining
+        2. inset at end
+        3. remove from begining
+        4. remove from end
+
+ -->

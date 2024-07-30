@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div>
+            <label for="inp">Enter the value</label>
+            <input type="text" name="" id="inp">
+        </div>
+
+        <span>
+            <input type="button" value="Max" onclick="Maximum()">
+        </span>
+
+
+        <span>
+            <input type="button" value="Min" onclick="Minimum()">
+        </span>
+
+        <span>
+            <input type="button" value="Push" onclick="Push()">
+        </span>
+    </form>
+
+    <p id="ans"></p>
+</body>
+
+<script>
+    let a=[]
+    let max
+    let min
+
+    function Push() {
+        let value=parseInt(document.f.inp.value)
+
+        a.push(value)
+        print()
+        
+    }
+
+    function Maximum() {
+        for (let index = 0; index < a.length; index++) {
+            max = a[0]
+
+            if(a[index]>max)
+            {
+                max = a[index]
+            }
+            
+        }
+
+        printmax()
+    }
+
+    function Minimum() {
+        for (let index = 0; index < a.length; index++) {
+            min = a[0]
+
+            if(a[index]<min)
+            {
+                min = a[index]
+            }
+            
+        }
+        printmin()
+    }
+
+    function print() {
+        document.getElementById('ans').innerHTML = a + "<br>"    
+    }
+
+    function printmax() {
+        document.getElementById('ans').innerHTML = a + "<br>" + "Max = " + max
+        
+    }
+
+    
+    function printmin() {
+        document.getElementById('ans').innerHTML = a + "<br>" +  "Max = " + max + "<br>" + "Min = " + min
+        
+    }
+
+
+
+
+</script>
+</html>

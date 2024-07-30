@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: tan;
+
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            color: wheat;
+            background-color: teal;
+            /* display:  flex; */
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" onmouseover="changeColor()"> Box</div>
+    <div class="box"> Box</div>
+    <div class="box"> Box</div>
+
+    <div id="box" onmousemove="changeColor()">
+
+    </div>
+    <h1 id="txt"> Hello</h1>
+    <button onclick="changeData()">Click here</button>
+
+    <br><br>
+    <a href="https://www.google.com" id="link">Google</a>
+    <button onclick="changeLink()">Change Link</button>
+
+
+    <br><br>
+    <img src="tajmahal.jpeg" id="img1" width="300px" height="200px" ondblclick="changeWidth()">
+    <script>
+
+        function changeColor() {
+            let colors = ['aqua', 'teal', 'red', 'green', 'purple', 'pink', 'yellow', 'orange', 'blue', 'brown']
+
+            let randomIndex = colors[Math.floor(Math.random() * 10)]
+            console.log("===> " + randomIndex)
+
+            document.getElementById('box').style.backgroundColor = randomIndex
+        }
+
+        function changeWidth() {
+            document.getElementById('img1').style.height = '500px'
+            document.getElementById('img1').style.width = '500px'
+        }
+        function changeData() {
+            let x = document.getElementById('txt')
+            // x.innerHTML = "Royal Tech Soft pvt"
+            // x.innerText = "inner text"
+            x.textContent = "text content"
+            x.style.color = 'blue'
+        }
+        function changeLink() {
+            let link = document.getElementById('link')
+            link.href = "https://www.amazon.in/"
+            link.innerHTML = "Amazon.com"
+            link.target = '_blank'
+        }
+
+        function changeColor() {
+            let x = document.getElementsByClassName('box')
+            console.log(x)
+            for (let i =0;i<3;i++) {
+                x[i].style.backgroundColor = 'red'
+            }
+
+        }
+    </script>
+</body>
+
+</html>

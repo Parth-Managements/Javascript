@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form name="f">
+        <table>
+
+            <tr>
+                <td>Choose your fav color :</td>
+                <td><input type="checkbox" name="c" value="B">Black
+                    <input type="checkbox" name="c" value="G"> Green
+                    <input type="checkbox" name="c" value="Y"> Yellow
+                    <input type="checkbox" name="c" value="O"> Orange
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="color()" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+
+</body>
+
+<p id="ans"></p>
+
+<script>
+    function color() {
+
+        x = document.f
+        let k = ''
+        let msg = 'Your favourite color is : '
+
+        for (let i = 0; i < x.c.length; i++) {
+            if (x.c[i].checked) {
+                k = x.c[i].value
+
+
+                if (k == 'B') {
+                    msg = msg + " Black "
+
+                }
+                if (k == 'G') {
+                    msg = msg + " Green "
+                }
+                if (k == 'O') {
+                    msg = msg + " Orange "
+                }
+                if (k == 'Y') {
+                    msg = msg + " Yellow "
+                }
+            }
+        }
+
+        let c = document.getElementById('ans')
+
+        c.innerHTML = msg
+
+        
+    
+
+
+
+    }
+</script>
+
+</html>

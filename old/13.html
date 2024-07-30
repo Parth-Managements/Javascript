@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function odd(){
+        let a = parseInt(document.f.a.value)  
+        let b = 1  
+    
+        for (let index = 1; index <=a; index++) {
+
+            b= index * index
+
+            document.write(b + " ")
+            
+        }
+    
+        }
+    </script>
+    <body>
+    
+    
+    
+    <form action="post" name="f">
+        <table>
+            <tr>
+                <td>Enter the value of a : <input type="text" name="a" id=""></td>
+            </tr>
+            <tr>
+                <td>
+                <input type="button" value="Print_Even" name="" id="" onclick="odd()">
+                </td>
+            </tr>
+    
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>class list</title>
+    <style>
+        .p1{
+            width: 300px;
+            /* height: 100px; */
+            padding: 20px;
+            background-color: teal;
+            color: wheat;
+        }
+    </style>
+</head>
+<body>
+    <p id="demo">
+        We are testing classList
+    </p>
+    <button onclick="addClass()">Add class</button>
+    <button onclick="rmvClass()">Remove class</button>
+    <button onclick="togle()">Toggle</button>
+    <script>
+        function addClass(){
+            let addLst = document.getElementById('demo').classList
+            addLst.add('p1')
+        }
+        function rmvClass(){
+            document.getElementById("demo").classList.remove('p1')
+        }
+        function togle(){
+            document.getElementById("demo").classList.toggle('p1')
+        }
+    </script>
+</body>
+</html>

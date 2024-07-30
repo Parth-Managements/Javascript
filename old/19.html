@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr><td>Nationality</td>
+                <td>
+                    <select name="na" id="">
+                        <option value="0">---- Select ----</option>
+                        <option value="in">India</option>
+                        <option value="ne">Nepal</option>
+                        <option value="us">USA</option>
+                        <option value="uk">UK</option>
+                        <option value="ca">Canada</option>
+                    </select>
+                </td></tr>
+                <tr>
+                    <td><input type="button" value="select" onclick="nation()"></td>
+                </tr>
+        </table>
+    </form>
+    <p id="na"></p>
+    <script>
+        function nation(){
+            let na = document.f.na.value
+
+            console.log("nationality : "+na)
+
+            if(na == 'in'){
+                document.getElementById('na').innerHTML = "I love India"
+            }
+
+            
+            if(na == 'ne'){
+                document.getElementById('na').innerHTML = "I love Nepal"
+            }
+
+            
+            if(na == 'us'){
+                document.getElementById('na').innerHTML = "I love USA"
+            }
+
+            
+            if(na == 'uk'){
+                document.getElementById('na').innerHTML = "I love UK"
+            }
+
+            
+            if(na == 'ca'){
+                document.getElementById('na').innerHTML = "I love Canada"
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

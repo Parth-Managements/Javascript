@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function palindrome(){
+        let a = parseInt(document.f.a.value)  
+        let b=a
+    
+        let z=0
+        while (a>0) {
+    
+            let c=a%10
+    
+            z = z*10 + c
+    
+            a =parseInt(a/10)
+            
+        }
+        if(b==z)
+        {
+            document.write(z + " is a palindrom number ")
+            
+        }
+        else
+        {
+            document.write(b + " is not a plaindrom number " )
+        }
+        }
+    </script>
+    <body>
+    
+    
+    
+    <form action="post" name="f">
+        <table>
+            <tr>
+                <td>Enter the value of a : <input type="text" name="a" id=""></td>
+            </tr>
+            <tr>
+                <td>
+                <input type="button" value="Palindrome" name="" id="" onclick="palindrome()">
+                </td>
+            </tr>
+    
+        </table>
+    </form>
+</body>
+</html>

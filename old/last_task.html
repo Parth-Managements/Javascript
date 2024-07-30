@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+
+
+        <div>
+            <label for="">Enter your mail</label>
+            <input type="email" name="" id="val">
+        </div>
+
+        <div>
+            <label for="">Enter your Password</label>
+            <input type="password" name="" id="val1">
+        </div>
+        <div>
+            <input type="button" name="" id="" onclick="uper()" value="Submit">
+        </div>
+    </form>
+
+<p id="ans"></p>
+</body>
+
+<script>
+
+    function uper() {
+
+
+            let a =document.f.val.value
+            let b =document.f.val1.value
+        
+            document.getElementById('ans').innerHTML = "Email:" +  a + "<br>" + "Password:" +   b.toUpperCase()
+        
+    }
+
+</script>
+</html>

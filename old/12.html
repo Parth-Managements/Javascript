@@ -1,0 +1,32 @@
+<script>
+    function factorial(){
+    let a = parseInt(document.f.a.value) 
+    
+    let b = 1
+
+    for (let index = 1; index <=a; index++) {
+        b = b * index
+
+    }
+
+    document.write("factorial = " + b)
+
+    }
+</script>
+<body>
+
+
+
+<form action="post" name="f">
+    <table>
+        <tr>
+            <td>Enter the value of a : <input type="text" name="a" id=""></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="button" value="Print_Even" name="" id="" onclick="factorial()">
+            </td>
+        </tr>
+
+    </table>
+</form>

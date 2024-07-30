@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div class="inp">
+            <label for="">Enter the values</label>
+            <input type="text" name="inp">
+        </div>
+        
+        <div class="inp">
+   
+            <input type="button" value="Push" name="" onclick="arrpush()">
+        </div>
+
+        
+
+        <p id="oup"></p>
+    </form>
+    <script>
+        let arr1=[]
+        let arr2=[]
+        let arr3=[]
+
+        function arrpush(){ 
+        val = parseInt(document.f.inp.value)
+        arr1.push(val)
+        arr2.push(val)
+        arr3.push(val+val)
+        arrprint()
+    }
+
+        function arrprint() {
+
+            document.getElementById('oup').innerHTML = arr1 + "<br>" + arr2 + "<br>" + arr3
+            
+        }
+    </script>
+</body>
+</html>

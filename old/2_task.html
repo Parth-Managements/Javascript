@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div>
+            <label for="">Enter String 1</label>
+            <input type="text" name="" id="str1">
+        </div>
+        
+        <div>
+            <label for="">Enter String 2</label>
+            <input type="text" name="" id="str2">
+        </div>
+        
+        <div>
+            <label for="">Enter String 3</label>
+            <input type="text" name="" id="str3">
+        </div>
+
+        <div>
+            <input type="button" value="Submit" name="" id="" onclick="long()">
+        </div>
+
+    </form>
+
+    <p id="ans"></p>
+</body>
+<script>
+    function long() {
+        
+        let str1 = document.f.str1.value
+        let str2 = document.f.str2.value
+        let str3 = document.f.str3.value
+
+        a = str1.length
+        b = str2.length
+        c = str3.length
+
+
+        
+        if(a>b)
+        {
+            if(a>c)
+            {
+                document.getElementById('ans').innerHTML = str1  + "is the longest string"
+            }
+
+        }
+
+        else if (b>c)
+        {
+            if(b>a)
+            {
+                document.getElementById('ans').innerHTML = str2  + "is the longest string"               
+            }
+        }
+
+        else
+        {
+                document.getElementById('ans').innerHTML = str3 + "is the longest string"
+            
+        }
+ 
+    }
+</script>
+</html>

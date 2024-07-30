@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        display: block;
+    }
+    #parent{
+        display: flex;
+        gap: 1em;
+    }
+</style>
+
+<body>
+    <img src="/Images/1.jpeg" alt="" ondblclick="chgimg()" id="img" height="500px" width="500px">
+    <div id="parent">
+    <button id="prev" onclick="prev()">Previous</button>
+    <button id="next" onclick="next()">Next</button>
+    </div>
+</body>
+
+<script>
+    var value = ["/Images/1.jpeg","/Images/2.jpeg", "/Images/3.jpeg", "/Images/4.jpeg", "/Images/5.jpeg", "/Images/6.jpeg", "/Images/7.jpeg", "/Images/8.jpeg", "/Images/9.jpeg", "/Images/10.jpeg", "/Images/11.jpeg"]
+    var currentindex = 0
+    function chgimg() {
+        var randomIndex = value[Math.floor(Math.random() * 10)]
+        let img = document.getElementById('img')
+        console.log(randomIndex)
+        img.src = randomIndex
+    }
+
+    function prev() {
+        console.log(currentindex)
+        currentindex = currentindex - 1
+        if (currentindex >= 0 && currentindex <= 10) {
+            img.src = value[currentindex]
+        }
+        else {
+            currentindex = 0
+            img.src = value[currentindex]
+        }
+
+
+    }
+    function next() {
+        console.log(currentindex)
+
+        currentindex = currentindex + 1
+        if (currentindex >= 0 && currentindex <= 10) {
+            img.src = value[currentindex]
+        }
+        else {
+            currentindex = 10
+            img.src = value[currentindex]
+        }
+
+    }
+
+
+
+</script>
+
+</html>

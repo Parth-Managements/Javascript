@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>Fav color : </td>
+                <td><input type="radio" name="c" value="bl">Black
+                    <input type="radio" name="c" value="pu"> Purple
+                    <input type="radio" name="c" value="bu"> Blue
+                    <input type="radio" name="c" value="ye"> Yellow
+                </td>
+            </tr>
+            <tr><td><input type="button" onclick="colr()" value="Fav Color"></td></tr>
+        </table>
+    </form>
+    <script>
+        function colr(){
+            let clr = document.f.c.value
+            console.log("clr : "+ clr)
+
+            if(clr == 'bl'){
+                document.write("Your Fav Color is Black")
+            }
+            if(clr == 'pu'){
+                document.write("Your Fav Color is Purple")
+            }
+            if(clr == 'bu'){
+                document.write("Your Fav Color is Blue")
+            }
+
+        }
+    </script>
+</body>
+</html>

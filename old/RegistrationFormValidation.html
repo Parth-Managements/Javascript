@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    <br><br>
+    <center>Registration Form</center>
+    <br>
+    <table border="0" align="center" width="40%" height="20%">
+        <form name="f">
+            <tr>
+                <td> <label>First Name : </label></td>
+                <td> <input type="text" name="fname"> <br></td>
+            </tr>
+            <tr>
+                <td> <label>Last Name : </label></td>
+                <td> <input type="text"> <br></td>
+            </tr>
+            
+            <tr>
+                <td> <label>Gender : </label></td>
+                <td> <input type="radio" name="Gender"> Male
+                    <input type="radio" name="Gender"> Female</td>
+            </tr>
+            <tr>
+                <td> <label>Email : </label></td>
+                <td> <input type="text"> <br></td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label> Password : &nbsp;&nbsp;</label>
+                </td>
+                <td><input type="password"></td>
+            </tr>
+            <tr>
+                <td> <label>Hobbies </label></td>
+                <td> <input type="checkbox" name="Hobby"> Dancing
+                    <input type="checkbox" name="Hobby"> Singing
+                    <input type="checkbox" name="Hobby"> Sport
+                    <input type="checkbox" name="Hobby"> keyboard</td>
+            </tr>
+            <tr>
+                <td>
+                <label> Contact NUmber </label>
+            </td>
+            <td><input type="tel"></td>
+        </tr>
+        
+            
+            <tr>
+                <td> <label>Nationality </label></td>
+                <td> 
+                    <select>
+                        <option>---Select ----</option>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>Canada</option>
+                        <option>Japan</option>
+                    </select>
+
+                </td>
+            </tr>
+                     
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Submit" onclick="valildate()">
+                </td>
+            </tr>
+
+        </form>
+    </table>
+</body>
+<script>
+    function valildate(){
+        let fn = document.f.fname.value
+        console.log("-->"+fn)
+        if(fn == " " || fn.trim() ){
+            alert("First name is Required...")
+        }
+    }
+</script>
+</html>

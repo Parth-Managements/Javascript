@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <script>
+        let str = "royal techno soft"
+        let str2 = ["royal","tech","soft"]
+        let strng = "jony jony yes yes papa papa"
+        document.write("<br> Str[] :"+str[3])
+        document.write("<br> String :"+str)
+        document.write("<br> String  len :"+str.length)
+        document.write("<br> String uppercase :"+str.toUpperCase())
+        document.write("<br> String : "+str)
+        document.write("<br> String Lowecase :"+str.toLowerCase())
+        let str3 = str.toLowerCase()
+        document.write("<br> After lower  : "+str3)
+
+        document.write("<br> indexof :"+ str.indexOf('a'))
+        document.write("<br> charAt : "+str.charAt(7))
+
+        document.write("<br> slice : "+str.slice(2,7))
+        document.write("<br> slice : "+str.slice(7))
+        document.write("<br> slice : "+str.slice(-4))
+        document.write("<br> slice : "+str.slice(-4,-1))
+
+
+        // document.write("<br>Splice : "+str.splice(2,1,"%%%%"))
+        document.write("<br> Replace : "+strng.replace("yes","noooo"))
+        document.write("<br> After replace : "+strng)
+        // document.write("<br> Replace : "+strng.replaceAll("yes","noooo"))
+
+        document.write("<br> include : "+strng.includes('y yess'))
+        // retun true or false 
+        document.write("<br> Index of : "+strng.indexOf("y"))
+        document.write("<br> Last inde of : "+strng.lastIndexOf('y'))
+        document.write("<br> Ends with : "+strng.endsWith("papaa"))
+        // true false
+        document.write("<br> Strats with : "+strng.startsWith("jony"))
+
+
+        document.write("<br> Concate : "+str.concat(str2,strng  ))
+        document.write("<br> Str : "+ str)
+
+        let str4 = "12345"
+        document.write("<br> End Pad "+str4.padEnd(10,"#"))
+        document.write("<br> Start Pad "+str4.padStart(10,"#"))
+
+        let str5 =  strng.split(' ')
+        document.write("<br> String : "+str5)
+        console.log("string "+ str5[2])
+
+        let str6 = "    Royal tech      "
+        document.write("<br>  len : "+str6.length)
+        document.write("<br> Trim strt : "+ str6.trimStart().length)
+        document.write("<br> Trim End : "+ str6.trimEnd().length)
+        document.write("<br> Trim both end : "+ str6.trim().length)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <div>
+            <label for="">Enter your values</label>
+            <input type="text" name="" id="val">
+        </div>
+
+        <div>
+            <label for="">Enter your values</label>
+            <input type="text" name="" id="val2">
+        </div>
+
+        <div>
+            <input type="button" name="" value="push" id="" onclick="arrpush()">
+        </div>
+
+
+        
+    </form>
+    <p id="ans"></p>
+</body>
+
+<script>
+
+    let a = [] 
+    let b = [] 
+    let c = []
+
+    function arrpush(){ 
+        val = document.f.val.value
+        val2 = document.f.val2.value
+        a.push(val)
+        b.push(val)
+        arrprint()
+    }
+
+
+    function sumArray()
+        {
+            let z =0
+            for (let i = 0 ; i<a.length ; i++)
+            {
+                let x = a[i]
+                let y = b[i]
+                
+                z = x + y 
+                c.push(z)
+                printSum()
+            }
+        }
+
+
+
+    function printSum(){
+        {
+            document.getElementById('arr3').innerHTML = "array C : " + c 
+        }
+
+
+    
+    function arrprint() {
+        document.getElementById('ans').innerHTML = a + "<br>" + b + "<br>"
+        
+    }
+        
+    }
+    function arrpop() {
+
+        a.pop()
+        arrprint()
+        
+    }
+
+
+</script>
+</html>

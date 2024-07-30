@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onkeydown="test(event)">
+    <h3 id="b"></h3>
+</body>
+<script>
+    function test(event) {
+
+        if (event.keyCode >= 48 && event.keyCode <= 57) {
+            document.getElementById("b").innerHTML = event.key + " is a Number" 
+        }
+        else if (event.keyCode == 97 || event.keyCode == 101 || event.keyCode == 105 || event.keyCode == 111 || event.keyCode == 117 || event.keyCode == 65 || event.keyCode == 69 || event.keyCode == 73 || event.keyCode == 79 || event.keyCode == 85) {
+            document.getElementById("b").innerHTML = event.key + " is a Vowel"
+        }
+        else {
+            if ((event.keyCode >= 97 && event.keyCode <= 122) || (event.keyCode >= 65 && event.keyCode <= 90)) {
+                document.getElementById("b").innerHTML = event.key + " is Consonant" 
+
+            }
+            else {
+
+                document.getElementById("b").innerHTML = event.key + " is a Special character"
+            }
+        }
+
+    }
+
+</script>
+
+</html>

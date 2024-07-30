@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div class="inp">
+            <label for="inp">Enter the values :</label>
+            <input type="text" name="" id="inp" class="text">
+        </div>
+
+        <span>
+            <input type="button" name="" id="" value="Push" onclick="Push()">
+        </span>
+        <span>
+            <input type="button" name="" id="" value="Pop" onclick="pop()">
+        </span>
+        
+        <span>
+            <input type="button" name="" id="" value="Sort" onclick="Sortarr()">
+        </span>
+        
+    </form>
+
+<p id="ans"></p>
+</body>
+
+<script>
+    let a=[]
+
+    function Push() {
+        let value = parseInt(document.f.inp.value)
+
+        a.push(value)
+        print()
+        
+    }
+
+    function Sortarr() {
+    
+        for (i = 1; i < a.length; i++)
+    {
+        let temp = a[i];
+        for (j = i - 1; j >= 0; j--)
+        {
+            if (temp < a[j])
+            {
+                a[j + 1] = a[j];
+            }
+            else
+            {
+                break;
+            }
+        }
+        a[j + 1] = temp;
+
+        print()
+    }
+}
+    function pop() {
+
+        a.pop()
+        print()
+        
+    }
+        
+    
+
+    function print() {
+        document.getElementById('ans').innerHTML = a + "<br>"
+        
+    }
+</script>
+</html>

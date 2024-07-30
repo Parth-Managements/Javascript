@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <label for="n1">Enter no of Array 1 :</label>
+        <input type="text" name="n1" id="n1"> <br> <br>
+        <label for="n2">Enter no of Array 2 :</label>
+        <input type="text" name="n2" id="n2"> <br> <br>
+
+        <input type="button" value="Submit" onclick="pushArray()"> &nbsp; &nbsp;
+        <input type="button" value="sumArray" onclick="sumArray()"> 
+        <input type="button" value="SortArray" onclick="SortArray()"> 
+        <input type="button" value="MinArray" onclick="MinArray()"> 
+        <input type="button" value="MaxArray" onclick="MaxArray()"> 
+        <input type="button" value="singleSum" onclick="singleSum()">  
+    </form>
+    <p id="arr1"></p>
+    <p id="arr2"></p>
+    <p id="arr3"></p>
+
+    <script>
+        let a = []
+        let b = []
+        let c = []
+
+        function pushArray()
+        {
+            let x = parseInt(document.getElementById('n1').value)
+            let y = parseInt(document.getElementById('n2').value)
+
+            a.push(x)
+            b.push(y)
+
+            printArrays()
+        }
+        function sumArray()
+        {
+            let z =0
+            for (let i = 0 ; i<a.length ; i++)
+            {
+                let x = a[i]
+                let y = b[i]
+                
+                z = x + y 
+                c.push(z)
+                printSum()
+            }
+        }
+        function SortArray()
+        {
+            let temp =0
+            for (let i =0;i<a.length ; i++)
+            {
+                for (let j=0;j<a.length;j++)
+                {
+                    if(a[j] > a[j+1])
+                    {
+                        temp = a[j]
+                        a[j] = a[j+1]
+                        a[j+1] = temp
+                    }
+                }
+            }
+            document.getElementById('arr3').innerHTML = a  
+        }
+        function MinArray()
+        {
+            let min = a[0]
+            for (let i=0 ; i< a.length ; i++)
+            {
+                if(min > parseInt(a[i]))
+                {
+                    min = parseInt(a[i])
+                }
+            }
+            document.getElementById('arr3').innerHTML = min
+        }
+        function MaxArray()
+        {
+            let max = a[0]
+            for (let i=0 ; i< a.length ; i++)
+            {
+                if(max <  parseInt(a[i]))
+                {
+                    max = parseInt(a[i])
+                }
+            }
+            document.getElementById('arr3').innerHTML = max
+        }
+        function singleSum()
+        {
+            let sum = 0
+            for (let i =0 ; i< a.length ; i++)
+            {
+                sum = sum + parseInt(a[i])
+            }
+            document.getElementById('arr3').innerHTML = sum 
+        }
+        function printArrays()
+        {
+            document.getElementById('arr1').innerHTML = "array A : " + a  
+            document.getElementById('arr2').innerHTML = "array B : " + b  
+        }
+        function printSum()
+        {
+            document.getElementById('arr3').innerHTML = "array C : " + c 
+        }
+    </script>
+</body>
+</html>

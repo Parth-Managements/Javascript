@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class_list</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        .head-container {
+            background: linear-gradient(to right, #FFD700, #FF6347);
+            color: #fff;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 5px solid #FF8C00;
+        }
+
+        .heading {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .para {
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .info {
+            margin: 0;
+        }
+
+        .img-container {
+            text-align: center;
+            margin-bottom: 40px;
+            overflow: hidden;
+
+        }
+
+        .img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        body.dark-theme {
+            background-color: #333;
+            color: #ddd;
+        }
+
+        .dark-theme .head-container {
+            background: linear-gradient(to right, #FF6347, #FFA500);
+            border-bottom-color: #FF4500;
+        }
+
+        .dark-theme .heading {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .dark-theme .para {
+            background-color: #444;
+            color: #ccc;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-theme .img {
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .dark-theme button {
+            background-color: #1976D2;
+        }
+
+        .dark-theme button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="temp">
+        <div class="head-container">
+            <h1 class="heading">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, rem.
+            </h1>
+        </div>
+
+        <div class="para">
+            <p class="info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa fuga perferendis impedit animi explicabo
+                ad ullam corporis! Ipsum nisi accusamus porro, quisquam possimus cupiditate odit labore voluptate, non
+                ex natus. Nam, repudiandae repellendus optio repellat atque porro est at possimus enim! In, ea ipsum?
+                Officia aut vel voluptatum eius iure laudantium, quam quibusdam nemo nam accusantium dolorem, at,
+                deleniti ab. Veniam mollitia officiis placeat. Eos, nihil ullam, at harum soluta, assumenda eligendi
+                doloribus sunt unde in quis vel nam reiciendis repudiandae rerum esse facilis! Ipsum quasi ab, dolor
+                distinctio illo ea harum at? Eligendi, ut. Temporibus asperiores sequi labore sit alias incidunt ea
+                aperiam blanditiis debitis! Rerum quis beatae atque magnam eveniet nemo dolorem praesentium eligendi
+                laboriosam animi ab fugit ea ipsum dolor ratione, laudantium asperiores obcaecati ad veniam laborum.
+                Harum sunt quaerat autem hic similique a reprehenderit. Autem enim assumenda officia ad explicabo
+                laboriosam, dicta modi accusantium error facere?
+            </p>
+        </div>
+
+    </div>
+
+    <button onclick="toggleTheme()">Toggle Theme</button>
+    <button onclick="addClass()">add Theme</button>
+    <button onclick="rmvClass()">remove Theme</button>
+
+
+    <script>
+        function addClass() {
+            document.body.classList.add("dark-theme");
+        }
+        function rmvClass() {
+            document.body.classList.remove("dark-theme");
+        }
+        function toggleTheme() {
+            document.body.classList.toggle("dark-theme");
+        }
+    </script>
+</body>
+
+</html>

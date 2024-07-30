@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload</title>
+</head>
+<body onload="bgClr()">
+    <script>
+        function bgClr(){
+
+            document.body.style.backgroundColor = 'Violet'
+            console.log("gold")
+            setTimeout(teal,2000)
+
+        }
+        function teal(){
+            document.body.style.backgroundColor = 'Indigo'
+            console.log("teal")
+            setTimeout(aqua,2000)
+        }
+        function aqua(){
+            document.body.style.backgroundColor = 'Blue'
+            console.log("aqua")
+            setTimeout(bgClr,2000)
+        }
+
+    </script>
+</body>
+</html>

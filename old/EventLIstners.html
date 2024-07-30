@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event listners</title>
+</head>
+<body>
+    <!-- event : inline function
+            call back function -->
+
+    <p id="p1">Hello </p>
+    <button id="btn">Click Here</button>
+    <script>
+        // document.getElementById('btn').addEventListener("click",bgClr)
+        // function bgClr(){
+        //     document.getElementById('p1').style.backgroundColor='teal'
+        // }
+
+        document.getElementById('btn').addEventListener('click',()=>
+        {
+            // alert("hello")
+             document.getElementById('p1').style.backgroundColor='teal'
+        }
+    )
+
+    </script>
+</body>
+</html>

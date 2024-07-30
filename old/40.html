@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello</h1>
+    <button id="clr">Click here</button>
+    <a href="https://www.google.com/" target="_blank" id="link">google</a>
+    <button id="change">Change Link</button>
+
+    <h1 id="big">Hello World</h1>
+    <button id="single">On Click</button>
+    <button id="double">On Dbl Click</button>
+
+</body>
+<script>
+    document.getElementById('clr').addEventListener('click', () =>
+        document.querySelector('h1').style.color = 'red')
+    document.getElementById('change').addEventListener('click', () =>
+        document.getElementById('link').href = "https://www.amazon.in/")
+    document.getElementById('change').addEventListener('click', () =>
+        document.getElementById('link').innerHTML = "Amazon")
+
+    document.getElementById('single').addEventListener('click', () =>
+        document.getElementById('big').style.backgroundColor = 'red')
+    document.getElementById('double').addEventListener('dblclick', () =>
+        document.getElementById('big').style.backgroundColor = 'blue')
+
+</script>
+
+</html>

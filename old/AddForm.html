@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f" >
+        <table>
+            <tr><td>Enter Val for a </td>
+                <td><input type="text" name="a" ></td>
+            </tr>
+            <tr>
+                <td>Entrt Val for b</td>
+                <td><input type="text" name="b"></td>
+            </tr>
+            <tr>
+                <td colspan="" align="center"><input type="button" onclick="add()" value="Addition"></td>
+        
+                <td colspan="" align="center"><input type="button" onclick="sub()" value="Subraction"></td>
+      
+                <td colspan="" align="center"><input type="button" onclick="mul()" value="Multiplication"></td>
+          
+                <td colspan="" align="center"><input type="button" onclick="div()" value="Division"></td>
+            </tr>
+            
+        </table>
+    </form>
+    <script>
+        function add(){
+           let a = parseInt(document.f.a.value)
+           let b = parseInt(document.f.b.value)
+           console.log("val of a : "+a)
+           console.log("val of b : "+b)
+
+           let c = a + b
+
+           document.write("<font size='6' color='brown'><br><br>Addition : "+c+"</font>")
+
+            
+        }
+
+        function sub(){
+           let a = parseInt(document.f.a.value)
+           let b = parseInt(document.f.b.value)
+           console.log("val of a : "+a)
+           console.log("val of b : "+b)
+
+           let c = a - b
+
+           document.write("<font size='6' color='brown'><br><br>Subraction : "+c+"</font>")
+
+            
+        }
+        function mul(){
+           let a = parseInt(document.f.a.value)
+           let b = parseInt(document.f.b.value)
+           console.log("val of a : "+a)
+           console.log("val of b : "+b)
+
+           let c = a * b
+
+           document.write("<font size='6' color='brown'><br><br>Multiplication : "+c+"</font>")
+
+            
+        }
+        function div(){
+           let a = parseInt(document.f.a.value)
+           let b = parseInt(document.f.b.value)
+           console.log("val of a : "+a)
+           console.log("val of b : "+b)
+
+           let c = a / b
+
+           document.write("<font size='6' color='brown'><br><br>Division : "+c+"</font>")
+
+            
+        }
+    </script>
+</body>
+</html>

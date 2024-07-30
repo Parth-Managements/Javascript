@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    Enter your choice :
+                    <input type="text" name="a" id="">
+                </td>
+                <tr>
+                    <td>
+                        <input type="radio" name="b" value="inse"> insert at beginning 
+                        <input type="radio" name="b" value="ins"> insert at end
+                        <input type="radio" name="b" value="rem"> remove from end
+                        <input type="radio" name="b" value="remo"> remove from start
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" name="" id="" onclick="arr()" >
+                    </td>
+                </tr>
+            </tr>
+        </table>
+    </form>
+</body>
+<p id="ans"></p>
+
+<script>
+    function arr(){
+        let value = document.f.b.value
+        let inp = document.f.a.value
+        let ans=''
+        let a=[1,2,3,4,5]
+
+        if(value='inse')
+        {
+            a.unshift(inp)
+            ans+=a
+            
+        }
+
+        if(value='ins')
+        {
+            a.push(inp)
+            ans+=a
+            
+        }
+
+        if(value='rem')
+        {
+            a.pop()
+            ans+=a
+            
+        }
+
+        if(value='remo')
+        {
+            a.shift()
+            ans+=a
+            
+        }
+        
+        document.getElementById('ans').innerHTML = ans
+
+        
+
+
+
+
+
+
+    }
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1 {
+        height: 200px;
+        width: 200px;
+        background-color: blue;
+    }
+
+    #box2 {
+        height: 200px;
+        width: 200px;
+        background-color: cyan;
+    }
+</style>
+
+<body>
+
+    <p id="p1">Hello</p>
+    <button id="btn">Click here</button>
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+</body> 
+<script>
+
+    document.getElementById('btn').addEventListener('click', () => {
+        document.getElementById('p1').style.backgroundColor = 'red'
+    }
+    )
+    document.getElementById('box1').addEventListener('mouseover', () => {
+        document.getElementById('box2').style.backgroundColor = 'red'
+    }
+    )
+    document.getElementById('box1').addEventListener('mouseleave', () => {
+        document.getElementById('box2').style.backgroundColor = 'cyan'
+    }
+    )
+    document.getElementById('box2').addEventListener('mouseover', () => {
+        document.getElementById('box1').style.backgroundColor = 'black'
+    }
+    )
+    document.getElementById('box2').addEventListener('mouseleave', () => {
+        document.getElementById('box1').style.backgroundColor = 'blue'
+    }
+    )
+</script>
+
+</html> 
+
+
+
+
+
+
+
+
+

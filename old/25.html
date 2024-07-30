@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div class="inp">
+            <label for="inp">Enter the values :</label>
+            <input type="text" name="" id="inp" class="text">
+        </div>
+
+        <span>
+            <input type="button" name="" id="" value="Push" onclick="Push()">
+        </span>
+        <span>
+            <input type="button" name="" id="" value="Pop" onclick="pop()">
+        </span>
+
+        
+    </form>
+
+<p id="ans"></p>
+</body>
+
+<script>
+    let a=[]
+    let sum = 0
+
+    function Push() {
+        let value = parseInt(document.f.inp.value)
+
+        a.push(value)
+        summation()
+        print()
+        
+    }
+
+    function summation() {
+        let value = parseInt(document.f.inp.value)
+        sum += value
+    
+        
+    }
+
+    function pop() {
+
+        let value = parseInt(document.f.inp.value)
+        sum -= value 
+        a.pop()
+        print()
+        
+    }
+        
+    
+
+    function print() {
+        document.getElementById('ans').innerHTML = a + "<br>" + "Sum = " + sum
+        
+    }
+</script>
+</html>

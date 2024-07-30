@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 200px;
+        height: 200px;
+        border: 5px solid red;
+        padding: 20px;
+        text-align: justify;
+    }
+</style>
+<body>
+    <div id="box" onmouseover="mouseOver()" onmouseout="mouseOut()">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iure maxime tempora excepturi earum nihil praesentium doloremque perferendis placeat cumque.</div>
+</body>
+<script>
+    function mouseOver()
+    {
+        document.getElementById('box').style.backgroundColor='green'
+    }
+    function mouseOut()
+    {
+        document.getElementById('box').style.backgroundColor= 'aqua'
+    }
+</script>
+</html>

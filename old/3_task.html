@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="f">
+        <div>
+            <label for="">Enter String 1</label>
+            <input type="text" name="" id="str1">
+        </div>
+        
+        <div>
+            <label for="">Replace</label>
+            <input type="text" name="" id="str2">
+        </div>
+        
+        <div>
+            <label for="">Replace with</label>
+            <input type="text" name="" id="str3">
+        </div>
+
+        <div>
+            <input type="button" value="Submit" name="" id="" onclick="rep()">
+        </div>
+
+    </form>
+
+    <p id="ans"></p>
+</body>
+<script>
+    function rep() {
+        let str1 = document.f.str1.value
+        let rep1 = document.f.str2.value
+        let rep2 = document.f.str3.value
+
+        document.getElementById('ans').innerHTML = str1.replace(rep1,rep2)
+        
+    }
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>even</title>
+</head>
+
+
+<script>
+    function even(){
+    let a = parseInt(document.f.a.value)    
+
+    for (let index = 0; index <=a; index++) {
+        if(index%2==0)
+        {
+            document.write(index + ' ')
+        }
+        
+    }
+
+    }
+</script>
+<body>
+
+
+
+<form action="post" name="f">
+    <table>
+        <tr>
+            <td>Enter the value of a : <input type="text" name="a" id=""></td>
+        </tr>
+        <tr>
+            <td>
+            <input type="button" value="Print_Even" name="" id="" onclick="even()">
+            </td>
+        </tr>
+
+    </table>
+</form>
+
+</body>
+</html

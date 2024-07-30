@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="color" onchange="chcolor()">
+        <option value="" selected> Select </option>
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="aqua">Aqua</option>
+        <option value="blueviolet">BlueViolet</option>
+        <option value="yellow">Yellow</option>
+    </select>
+
+
+
+    <table style="width: 500px; height: 500px; " border="black">
+        <tr id="table">
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr id="table2">
+            <td>
+
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+
+    function chcolor() {
+        let value = document.getElementById('color').value
+
+        if (value == 'blue') {
+
+            document.getElementById('table').style.backgroundColor = 'Blue'
+            document.getElementById('table2').style.backgroundColor = 'Blue'
+
+        }
+        if (value == 'red') {
+
+            document.getElementById('table').style.backgroundColor = 'red'
+            document.getElementById('table2').style.backgroundColor = 'red'
+
+        }
+        if (value == 'aqua') {
+
+            document.getElementById('table').style.backgroundColor = 'aqua'
+            document.getElementById('table2').style.backgroundColor = 'aqua'
+
+        }
+        if (value == 'green') {
+
+            document.getElementById('table').style.backgroundColor = 'green'
+            document.getElementById('table2').style.backgroundColor = 'green'
+
+        }
+        if (value == 'blueviolet') {
+
+            document.getElementById('table').style.backgroundColor = 'Blueviolet'
+            document.getElementById('table2').style.backgroundColor = 'Blueviolet'
+
+        }
+        if (value == 'yellow') {
+
+            document.getElementById('table').style.backgroundColor = 'yellow'
+            document.getElementById('table2').style.backgroundColor = 'yellow'
+
+        }
+
+
+
+
+
+    }
+</script>
+
+</html>

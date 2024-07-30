@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #box1 {
+        height: 100px;
+        width: 100%;
+        background-color: aqua;
+    }
+    #box2{
+        height: 100px;
+        width: 100%;
+        background-color: red;
+    }
+    #box3{
+        height: 100px;
+        width: 100%;
+        background-color: blue;
+    }
+    #box4{
+        height: 100px;
+        width: 100%;
+        background-color: blueviolet;
+    }
+    #box5{
+        height: 100px;
+        width: 100%;
+        background-color: chartreuse;
+    }
+    #box6{
+        height: 100px;
+        width: 100%;
+        background-color: crimson;
+    }
+</style>
+
+<body onload="changer()">
+
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <div id="box6"></div>
+
+
+
+</body>
+<script>
+
+    function changer()
+    {
+        document.getElementById('box1').style.backgroundColor = 'dodgerblue'
+        setTimeout(chartreuse,1000)
+    }
+    function chartreuse()
+    {
+        document.getElementById('box2').style.backgroundColor = 'chocolate'
+        setTimeout(crimson,1000)
+    }
+
+    function crimson()
+    {
+        document.getElementById('box3').style.backgroundColor = 'burlywood'
+        setTimeout(blueviolet,1000)
+    }
+    function blueviolet()
+    {
+        document.getElementById('box4').style.backgroundColor = 'cadetblue'
+        setTimeout(red,1000)
+    }
+    function red()
+    {
+        document.getElementById('box5').style.backgroundColor = 'forestgreen'
+        setTimeout(blue,1000)
+    }
+    function blue()
+    {
+        document.getElementById('box6').style.backgroundColor = 'darkorange'
+        setTimeout(changer,1000)
+    }
+</script>
+
+</html>

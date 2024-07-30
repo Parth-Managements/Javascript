@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <tr>
+            <td>Enter: <input type="text" name="s"></td><br>
+            <td>Enter string u want to find<input type="text" name="in"></td>
+        </tr>
+        <tr>
+            <td><input type="button" onclick="str_include()" value="submit"></td>
+        </tr>
+    </form>
+    <p id="ans"></p>
+    <script>
+
+        function str_include(params) {
+            
+            let x = document.f.s.value
+            let a = document.f.in.value
+          
+            if(x.includes(a))
+            {
+                document.getElementById('ans').innerHTML = "String Found"
+            }
+            else
+            {
+                document.getElementById('ans').innerHTML = "String Not Found"
+    
+            }
+        }
+
+    </script>
+</body>
+
+</html>

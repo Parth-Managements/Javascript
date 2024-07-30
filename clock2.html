@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Display</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: white;
+        margin: 0;
+    }
+
+    .date-container {
+        background: linear-gradient(#a6c0fe, #f68084);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    #date {
+        font-size: 24px;
+        font-family: 'Arial';
+        color: black;
+    }
+
+    .time-container {
+        background: linear-gradient(rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #time {
+        font-size: 48px;
+        font-family: 'Arial';
+        color: white;
+        margin: 0;
+    }
+</style>
+
+<body>
+    <div class="date-container">
+        <p id="date"></p>
+    </div>
+    <div class="time-container">
+        <p id="time"></p>
+    </div>
+</body>
+<script>
+function clock() {
+    let t = new Date()
+    let time = t.toLocaleTimeString()
+    document.getElementById('time').innerHTML = time
+
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+    let dayName = days[t.getDay()];
+    let monthName = months[t.getMonth()];
+    let dayNumber = t.getDate();
+    let year = t.getFullYear();
+    let full = dayName + "," + monthName + " " + +dayNumber + " ," + year 
+    document.getElementById('date').innerHTML = full
+    console.log(full)
+}
+
+setInterval(clock, 1000)
+clock()
+
+
+</script>
+
+</html>

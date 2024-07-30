@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box
+    {
+        margin-top: 10px;
+        width: 100px;
+        height:100px;
+        background-color: teal;
+    }
+</style>
+<body>
+    <div>
+        Enter width:<input type="text" name="" id="w">
+    </div>
+    <div>
+        Enter height:<input type="text" name="" id="h">
+    </div>
+    <div>
+        Enter border-radius: <input type="text" id="br">
+    </div>
+    <div>
+        <button onclick="dollarfn()">addcss</button>
+    </div>
+    <div id="box">
+
+    </div>
+</body>
+<script>
+    function dollarfn()
+    {
+        let w = document.getElementById('w').value
+        let h = document.getElementById('h').value
+        let br = document.getElementById('br').value
+        let clr = 'green'
+        console.log(w + h)
+        document.getElementById('box').style.height = `${h}px`
+        document.getElementById('box').style.width = `${w}px`
+        document.getElementById('box').style.borderRadius = `${br}px`
+        document.getElementById('box').style.backgroundColor = clr
+        
+    }
+</script>
+</html>

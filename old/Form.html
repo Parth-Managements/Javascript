@@ -1,0 +1,215 @@
+<html>
+<head>
+    <title>Form</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br><br><br><br>
+    <form name="f">
+        <table align="center">
+        <tr>    
+         <td><label for="fname"> First Name</label></td>
+        <td><input type="text" name="fname" id="fname">
+            <!-- <p>First Name is Required</p> -->
+            <!-- <div>First Name is Required</div> -->
+            <span id="errFn"></span>
+        </td>
+    </tr>
+    <tr>
+        <td><label>Last Name</label></td>
+        <td><input type="text" name="lname">
+        <span id="errLn"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td><input type="radio" name="g" value="m"> Male
+        <input type="radio" name="g" value="f">Female
+            <span id="errGen"></span>
+
+    </td>
+
+    </tr>
+    <tr>
+        <td>Contact No</td>
+        <td><input type="tel" name="cn">
+        <span id="errCn"></span>
+        </td>        
+    </tr>
+    <tr>
+        <td>Hobbies</td>
+        <td><input type="checkbox" name="h" value="sp"> sports
+            <input type="checkbox" name="h" value="mu">music
+            <input type="checkbox" name="h" value="dr">Drawing
+            <span id="errHby"></span>
+        </td>
+    </tr>
+    
+    <tr>
+        <td>Email id</td>
+        <td><input type="email" name="email">
+            <span id="errEmail"></span></td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="password" name="pwd">
+        <span id="errPwd"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Confirm Password</td>
+        <td><input type="password" name="cpwd">
+        <span id="errCPwd"></span></td>
+    </tr>
+    
+    <tr>
+            <td>Country</td>
+            <td><select name="na">
+                <option value="0">---Select---</option>
+                <option value="in">India</option>
+                <option value="ne">Nepal</option>
+                <option value="bh">Bhutan</option>
+                <option value="pa">Pakistan</option>
+            </select>
+            <span id="errNa"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>Enter wesite</td>
+        <td><input type="url"></td>
+    </tr>
+    <tr>
+        <td>Address</td>
+        <td><textarea name="address" id="#" cols="25" rows="3"></textarea></td>
+    </tr>
+    
+    <tr>
+        <td colspan="2" align="center"> <input type="button" value="Submit" onclick="valdate()">&nbsp;&nbsp;&nbsp;<input type="reset"  ></td>
+    </tr>
+
+    </table>
+    </form>
+    <br>
+    <br><br><br><br>
+       
+    <script>
+        function valdate(){
+            let fname = document.f.fname.value
+            let lname = document.f.lname.value
+            let cn = document.f.cn.value
+            let pwd = document.f.pwd.value
+            let cpwd = document.f.cpwd.value
+            let email = document.f.email.value
+            console.log("-->",fname)
+            let isErr =  false
+            let msg = " "
+            let textonly = /^[a-zA-Z]+$/
+            let numberonly = /^[0-9]+$/
+            let emailcheck = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+            
+
+            if(fname == "" || fname.trim().length==0){
+
+                document.getElementById('errFn').innerHTML = "<font color='red'>* First Name is Required</font>"
+            }
+
+            else if (textonly.test(fname) == false)
+            {
+                document.getElementById('errFn').innerHTML = "<font color='red'>Only text is allowed</font>"
+            }
+            else
+            {
+                document.getElementById('errFn').innerHTML = " "
+            }
+            if(lname == "" || lname.trim().length == 0){
+
+
+                document.getElementById('errLn').innerHTML = "* Last Name is Required"
+            }
+
+            
+            else if (textonly.test(lname) == false)
+            {
+                document.getElementById('errLn').innerHTML = "<font color='red'>Only text is allowed</font>"
+            }
+            else
+            {
+                document.getElementById('errLn').innerHTML = " "
+            }
+
+            let cnt = 0
+
+            for(let i=0;i<document.f.g.length;i++){
+                if(document.f.g[i].checked){
+                    cnt ++     
+                 }
+            }
+            if(cnt==0){
+                document.getElementById('errGen').innerHTML = "* Gender is Required"
+            }
+
+
+            let cntr = 0
+
+            for(let i=0;i<document.f.h.length;i++){
+                if(document.f.h[i].checked){
+                    cntr++
+                }
+            }
+            if(cntr == 0){
+                document.getElementById('errHby').innerHTML = "* Hobbies are Required"
+            }
+
+            let nationality = document.f.na.value
+            console.log(nationality)
+
+            if(nationality == '0'){
+                document.getElementById('errNa').innerHTML = "* Nationality is Required"
+
+            }   
+
+            if(cn == "" || cn.trim().length == 0){
+                document.getElementById('errCn').innerHTML = " * Contact no is Required"
+            }
+
+
+            else if (numberonly.test(cn) == false)
+            {
+                document.getElementById('errCn').innerHTML = "Only digits are allowed"
+            }
+            else
+            {
+                document.getElementById('errCn').innerHTML = ""
+            }
+
+            if(pwd == "" || pwd.trim().length == 0){
+                document.getElementById('errPwd').innerHTML = " * Password is Required"
+            }
+
+            if(cpwd == "" || cpwd.trim().length == 0){
+                document.getElementById('errCPwd').innerHTML = " *Confirm Password is Required"
+            }
+            else if(pwd != cpwd){
+                    document.getElementById('errPwd').innerHTML = "* pwd and cpwd should be same"
+            }
+
+            if(email.trim().length==0){
+                document.getElementById('errEmail').innerHTML = " * Email is Required"
+            }
+            else if(emailcheck.test(email)==false){
+                document.getElementById('errEmail').innerHTML = " * Email id is not valid"
+            }
+            else{
+                document.getElementById('errEmail').innerHTML = " "
+            }
+
+
+        }
+    </script>
+</body>
+</html>
