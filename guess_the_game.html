@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Enter the number</h1>
+    <input type="text" id="res">
+    <button id="submit" onclick="Eval()">Submit guess</button>
+    <div>
+        <h2 id="prev_guess">Previos guesses: </h2>
+    </div>
+    <div>
+        <h2 id="rem_guess">Remaining Guesses:</h2>
+    </div>
+    <div>
+        <p id="result"></p>
+    </div>
+</body>
+<script>
+    const randomnum = Math.floor(Math.random() * 100)
+    
+    function Eval() {
+        
+        let result = document.getElementById('res').value
+        console.log(randomnum + result)
+        
+        if (result > 100) {
+            document.getElementById('result').innerText = "Enter number between 1 to 100"
+
+        }
+        if (result == randomnum) {
+            document.getElementById('result').innerText = "Your guess is correct"
+        }
+        else if (result < randomnum) {
+            document.getElementById('result').innerText = "TOO LOW! TRY AGAIN"
+        }
+        else {
+            document.getElementById('result').innerText = "TOO HIGH! TRY AGAIN"
+        }
+    }
+</script>
+
+</html>

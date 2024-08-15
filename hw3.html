@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="f">
+        <table>
+            <tr>
+                <td>
+                    Enter First Name
+                </td>
+                <td>
+
+                    <input type="text" name="fn">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Enter Last Name
+                </td>
+                <td>
+                    <input type="text" name="ln">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Contact Numbet
+                </td>
+                <td>
+                    <input type="text" name="cn">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender
+                </td>
+                <td>
+                    <input type="radio" name="g" value="m">Male
+                    <input type="radio" name="g" value="fm">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    E-mail
+                </td>
+                <td>
+                    <input type="email" name="em">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    <input type="password" name="pw">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Hobbies
+                </td>
+                <td>
+                    <input type="checkbox" name="s" value="mu">Music
+                    <input type="checkbox" name="s" id="" value="sp">Sports
+                    <input type="checkbox" name="s" value="re">Reading
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><input type="button" value="Add Value" onclick="addvalue()"></td>
+            </tr>
+        </table>
+    </form>
+    <table width="800" id="t">
+        <tr>
+            <td>First Name</td>
+
+
+            <td>Last Name</td>
+
+
+            <td>Contact Number</td>
+
+
+            <td>Gender</td>
+
+
+            <td>E-mail</td>
+
+
+            <td>Password</td>
+
+
+            <td>Hobby</td>
+        </tr>
+    </table>
+    <h1 id="js"></h1>
+    <script>
+        function addvalue() {
+            let fn = document.f.fn.value
+            let ln = document.f.ln.value
+            let cn = document.f.cn.value
+            let gender = document.f.g.value
+            if (gender == 'm') {
+                gender = "Male"
+            }
+            else {
+                gender = "Female"
+            }
+
+
+            let em = document.f.em.value
+            let pw = document.f.pw.value
+
+            ch = document.f.s
+            str = ''
+            for (i = 0; i < ch.length; i++) {
+                if (ch[i].checked) {
+                    if (ch[i].value == 'sp') {
+                        str += 'sports '
+                    }
+                    else if (ch[i].value == 'mu') {
+                        str += 'music '
+                    }
+                    else {
+                        str += 'Reading '
+                    }
+                }
+            }
+
+
+            let data = [fn, ln, cn, gender, em, pw, str]
+            let tr = document.createElement("tr")
+            for (let i = 0; i < data.length; i++) {
+                let td = document.createElement("td")
+
+                td.innerHTML = data[i]
+                tr.appendChild(td)
+            }
+            document.getElementById("t").appendChild(tr)
+        }
+    </script>
+</body>
+
+</html>
