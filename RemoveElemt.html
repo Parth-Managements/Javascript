@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background-image: url("whitebg.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+    }
+
+    .main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    #sl {
+        color: rgb(119, 119, 252);
+        font-size: 35px;
+        word-spacing: 5px;
+        letter-spacing: 1.5px;
+    }
+
+    .addI {
+        width: 430px;
+        color: rgb(153, 153, 253);
+        font-size: 20px;
+    }
+
+    form {
+        display: inline;
+    }
+
+    button {
+        color: rgb(153, 153, 253);
+        border: 2px solid rgb(119, 119, 252);
+    }
+
+    input {
+        border: 2px solid rgb(119, 119, 252);
+    }
+
+    .need,
+    .have {
+        width: 26%;
+        color: rgb(119, 119, 252);
+        /* background-color: aqua; */
+        /* padding: 10px; */
+    }
+
+    #nlist,
+    #hlist {
+        list-style: none;
+
+    }
+
+    li {
+        font-size: 22px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: rgb(153, 153, 253);
+        border: 2px solid rgba(78, 78, 78, 0.326);
+
+    }
+
+    .box {
+        width: 26%;
+    }
+
+    input {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+
+    .fa {
+        float: right;
+        padding-right: 5px;
+    }
+
+    /* .btn{
+        padding: 10px;
+    } */
+    #heading {
+        color: lightseagreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container
+    {
+        color: lightseagreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .temp1
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .temp2
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+</style>
+
+<body>
+
+    <div id="heading">
+        <div>
+            <h1>
+                Shopping list
+            </h1>
+        </div>
+    </div>
+    <div class="container">
+        Add item <div class="add">
+           <input type="text">
+        </div> <button id="but" type="button" onclick="addeleneed()">Need</button> <button id="have" type="button">Have</button>
+        </div>
+    <div class="temp1">
+        <h1 style="color: lightseagreen;">Need:</h1>
+    <div class="box">
+        <ul id="hlist1">
+            <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
+                    style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
+            <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
+            <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
+            <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
+        </ul>
+    </div>
+    </div>
+    <div class="temp2">
+        <h1 style="color: lightseagreen;">Have:</h1>
+    <div class="box">
+        <ul id="hlist2">
+            <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
+                    style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
+            <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
+            <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
+            <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
+                    style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
+        </ul>
+    </div>
+    </div>
+</body>
+<script>
+    function addeleneed()
+    {
+        const input = document.querySelector('input[type="text"]');
+        const itemText = input.value.trim();
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <input type="checkbox" class="ncheck">${itemText}
+            <i class="fa fa-remove" style="font-size:26px;color:red" onclick="rmve(this)"></i>`;
+        const needList = document.getElementById('hlist1');
+        needList.appendChild(listItem);
+
+    }
+    function rmve(a) {
+        
+        document.getElementById(a).remove()
+    }
+
+
+
+</script>
+
+</html>
