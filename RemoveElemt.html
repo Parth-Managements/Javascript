@@ -137,7 +137,7 @@
     <div class="container">
         Add item <div class="add">
            <input type="text">
-        </div> <button id="but" type="button" onclick="addeleneed()">Need</button> <button id="have" type="button">Have</button>
+        </div> <button id="but" type="button" onclick="addeleneed()">Need</button> <button id="have" type="button" onclick="addelehave()">Have</button>
         </div>
     <div class="temp1">
         <h1 style="color: lightseagreen;">Need:</h1>
@@ -179,7 +179,22 @@
         listItem.innerHTML = `
             <input type="checkbox" class="ncheck">${itemText}
             <i class="fa fa-remove" style="font-size:26px;color:red" onclick="rmve(this)"></i>`;
+        
         const needList = document.getElementById('hlist1');
+        needList.appendChild(listItem);
+
+    }
+
+    function addelehave()
+    {
+        const input = document.querySelector('input[type="text"]');
+        const itemText = input.value.trim();
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <input type="checkbox" class="ncheck">${itemText}
+            <i class="fa fa-remove" style="font-size:26px;color:red" onclick="rmve(this)"></i>`;
+        
+        const needList = document.getElementById('hlist2');
         needList.appendChild(listItem);
 
     }
