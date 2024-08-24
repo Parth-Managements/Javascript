@@ -179,6 +179,7 @@
         let checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.className = 'ncheck';
+        
 
         let textNode = document.createTextNode(input);
 
@@ -195,6 +196,10 @@
 
         let final = document.getElementById('hlist1');
         final.appendChild(node);
+
+        icon.addEventListener('click',() => {
+            node.remove();
+        })
 
 
     }
@@ -222,6 +227,11 @@
 
         let final = document.getElementById('hlist2');
         final.appendChild(node);
+
+        icon.addEventListener('click',() => {
+            node.remove();
+        })
+
     }
     function rmve(a) {
 
