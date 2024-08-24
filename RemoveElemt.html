@@ -103,26 +103,25 @@
         justify-content: center;
         align-items: center;
     }
-    .container
-    {
+
+    .container {
         color: lightseagreen;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .temp1
-    {
+
+    .temp1 {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .temp2
-    {
+
+    .temp2 {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    
 </style>
 
 <body>
@@ -136,70 +135,96 @@
     </div>
     <div class="container">
         Add item <div class="add">
-           <input type="text">
-        </div> <button id="but" type="button" onclick="addeleneed()">Need</button> <button id="have" type="button" onclick="addelehave()">Have</button>
-        </div>
+            <input type="text" id="inp">
+        </div> <button id="but" type="button" onclick="addeleneed()">Need</button> <button id="have" type="button"
+            onclick="addelehave()">Have</button>
+    </div>
     <div class="temp1">
         <h1 style="color: lightseagreen;">Need:</h1>
-    <div class="box">
-        <ul id="hlist1">
-            <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
-                    style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
-            <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
-            <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
-            <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
-        </ul>
-    </div>
+        <div class="box">
+            <ul id="hlist1">
+                <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
+                        style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
+                <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
+                <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
+                <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
+            </ul>
+        </div>
     </div>
     <div class="temp2">
         <h1 style="color: lightseagreen;">Have:</h1>
-    <div class="box">
-        <ul id="hlist2">
-            <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
-                    style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
-            <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
-            <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
-            <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
-                    style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
-        </ul>
-    </div>
+        <div class="box">
+            <ul id="hlist2">
+                <li id="steak"><input type="checkbox" class="ncheck">Steak <i class="fa fa-remove"
+                        style="font-size:25px;color:red" onclick="rmve('steak')"></i></li>
+                <li id="cheese"><input type="checkbox" class="ncheck">Cheese <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('cheese')"></i></li>
+                <li id="cream"><input type="checkbox" class="ncheck">Cream <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('cream')"></i></li>
+                <li id="apples"><input type="checkbox" class="ncheck">Apples <i class="fa fa-remove"
+                        style="font-size:26px;color:red" onclick="rmve('apples')"></i></li>
+            </ul>
+        </div>
     </div>
 </body>
 <script>
-    function addeleneed()
-    {
-        const input = document.querySelector('input[type="text"]');
-        const itemText = input.value.trim();
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <input type="checkbox" class="ncheck">${itemText}
-            <i class="fa fa-remove" style="font-size:26px;color:red" onclick="rmve(this)"></i>`;
-        
-        const needList = document.getElementById('hlist1');
-        needList.appendChild(listItem);
+    function addeleneed() {
+        let input = document.getElementById('inp').value;
+
+        let node = document.createElement('li');
+
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'ncheck';
+
+        let textNode = document.createTextNode(input);
+
+        let icon = document.createElement('i');
+        icon.className = 'fa fa-remove';
+        icon.style.fontSize = '26px';
+        icon.style.color = 'red';
+
+
+
+        node.appendChild(checkbox);
+        node.appendChild(textNode);
+        node.appendChild(icon);
+
+        let final = document.getElementById('hlist1');
+        final.appendChild(node);
+
 
     }
 
-    function addelehave()
-    {
-        const input = document.querySelector('input[type="text"]');
-        const itemText = input.value.trim();
-        const listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <input type="checkbox" class="ncheck">${itemText}
-            <i class="fa fa-remove" style="font-size:26px;color:red" onclick="rmve(this)"></i>`;
-        
-        const needList = document.getElementById('hlist2');
-        needList.appendChild(listItem);
+    function addelehave() {
+        let input = document.getElementById('inp').value;
 
+        let node = document.createElement('li');
+
+        let checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.className = 'ncheck';
+
+        let textNode = document.createTextNode(input);
+
+        let icon = document.createElement('i');
+        icon.className = 'fa fa-remove';
+        icon.style.fontSize = '26px';
+        icon.style.color = 'red';
+
+
+        node.appendChild(checkbox);
+        node.appendChild(textNode);
+        node.appendChild(icon);
+
+        let final = document.getElementById('hlist2');
+        final.appendChild(node);
     }
     function rmve(a) {
-        
+
         document.getElementById(a).remove()
     }
 
