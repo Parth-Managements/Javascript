@@ -6,43 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+    .magic{
+        display: none;
+    }
+</style>
 <body>
     <center>
-        <h1>Signup Form</h1>
+        <div class="container">
+            <div id="signup-form">
+                <h1>Signup Form</h1>
+                <div>
+                    <label for="first-name">First Name:</label>
+                    <input type="text" id="first-name">
+                </div>
+                <div>
+                    <label for="last-name">Last Name:</label>
+                    <input type="text" id="last-name">
+                </div>
+                <div>
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email">
+                </div>
+                <div>
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password">
+                </div>
+                <div>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password">
+                </div>
+                <div>
+                    <label for="mobile-no">Mobile No:</label>
+                    <input type="text" id="mobile-no">
+                </div>
+                <div>
+                    <a onclick="magic()" href="#" >Login</a>
+                </div>
+            </div>
 
-        <div>
-            <label for="">First Name:</label>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <label for="">Last Name:</label>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <label for="">Email</label>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <label for="">Password:</label>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <label for="">Confirm Password:</label>
-            <input type="text" name="" id="">
-        </div>
-        <div>
-            <label for="">Mobile No:</label>
-            <input type="text" name="" id="">
-        </div>
-
-        <div>
-            <div>
-                <a href="">Login</a>
+            <div id="login-form" class="magic">
+                <h1>Login Form</h1>
+                <div>
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email">
+                </div>
+                <div>
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password">
+                </div>
+                <div>
+                    <a href="#" onclick="magic()">Signup</a>
+                </div>
             </div>
         </div>
     </center>
 
 </body>
-
+<script>
+    function magic()
+    {
+        let signup = document.getElementById('signup-form')
+        let login = document.getElementById('login-form')
+        signup.classList.toggle('magic')
+        login.classList.toggle('magic')
+    }
+</script>
 </html>

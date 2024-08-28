@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: LightGray;
+        font-family: sans-serif;
+    }
+
+    .container {
+        width: 300px;
+        margin: 100px auto;
+        padding: 20px;
+        background-color: GhostWhite;
+        border-radius: 10px;
+    }
+
+    h1 {
+        text-align: center;
+        color: DarkSlateGray;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid LightGray;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: MediumSeaGreen;
+        color: White;
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+
+    .result {
+        margin-top: 10px;
+        padding: 10px;
+        background-color: GhostWhite;
+        border: 1px solid LightGray;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Prime Number Finder</h2>
+        <input type="text" id="number" placeholder="Enter a number">
+        <button onclick="checkPrime()">Submit</button>
+        <button onclick="clearInput()">Clear</button>
+        <div class="result" id="result"></div>
+    </div>
+</body>
+<script>
+    function checkPrime() {
+        let number = document.getElementById("number").value;
+        let result = document.getElementById("result");
+
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                result.innerHTML = number + " is not a prime number.";
+                return;
+            }
+        }
+
+        result.innerHTML = number + " is a prime number.";
+    }
+
+    function clearInput() {
+        document.getElementById("number").value = "";
+        document.getElementById("result").innerHTML = "";
+    }
+</script>
+
+</html>
