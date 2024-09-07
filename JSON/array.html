@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="arr">
+
+    </div>
+    <div id="">
+
+    </div>
+</body>
+<script>
+    let arr = []
+
+    for (let i = 0; i < 10; i++) {
+        arr[i] = Math.floor(Math.random() * 100)
+    }
+
+    for (let i = 0; i < 10; i++) {
+        document.write(arr[i] + " ")
+    }
+
+    let even = arr.filter((val) => {
+        if (val % 2 == 0) {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+
+    )
+    document.write("<br><br> ans:")
+    document.write(even)
+
+
+
+</script>
+
+</html>

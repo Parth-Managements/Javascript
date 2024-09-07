@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    const data =
+    {
+        "Name": "Virat",
+        "Cno": "1234567890",
+        "Surname": "Kohli",
+        "address": {
+            "city": "delhi",
+            "state": "New Delhi",
+            "Country": "India"
+        }
+    }
+    data.email = "don'tknow@gmail.com"
+    for (let key in data.address) {
+        document.write("<br>" + key + " : " + data.address[key])
+    }
+
+    document.write("<br>" + "<br>" + "After changing : " + "<br>")
+    data.address.city = "Bengaluru"
+    data.address.state = "Karnataka"
+
+    for (let key in data.address) {
+        document.write("<br>" + key + " : " + data.address[key])
+    }
+</script>
+
+</html>
