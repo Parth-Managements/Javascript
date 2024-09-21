@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script>
+    let arr1 = []
+    let arr2 = []
+
+    for (let i = 0; i < 5; i++) {
+        arr1[i] = Math.floor(Math.random() * 100)
+        arr2[i] = Math.floor(Math.random() * 100)
+    }
+    
+    document.write("Array 1 : " + arr1 + "<br>")
+    document.write("Array 2 : " + arr2 + "<br>")
+
+
+    let max1 = 0, max2 = 0;
+
+    let ans1 = arr1.filter((val) => {
+        if (val > max1) {
+            max1 = val;
+        }
+    })
+
+    let ans2 = arr2.filter((val) => {
+        if (val > max2) {
+            max2 = val;
+        }
+    })
+
+    document.write("Maxium element in array 1 is  : " + max1 + "<br>")
+    document.write("Maxium element in array 2 is  : " + max2 + "<br>")
+
+
+</script>
+
+</html>

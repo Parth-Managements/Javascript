@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <style>
+      body {
+            margin: 0;
+            padding: 0;
+            background-image: url('./Photos/library.png');
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #parent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            width: 60%;
+            text-align: center;
+            color: white;
+        }
+
+        #text-box {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        #author {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        #buttn {
+            background-color: red;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: white;
+        }
+
+
+    </style>
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="text-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, ullam?</div>
+        <div id="author">Magnus Carlsen</div>
+        <button id="buttn" type="button" onclick="generat()">Generate Quote</button>
+    </div>
+
+    <script>
+        function generat() {
+            const quotes = [
+                {
+                    quote: "The only way to do great work is to love what you do.",
+                    author: "Steve Jobs"
+                },
+                {
+                    quote: "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment",
+                    author: "Ralph Waldo Emerson"
+                },
+                {
+                    quote: "In three words I can sum up everything I've learned about life: it goes on.",
+                    author: "Robert Frost"
+                },
+                {
+                    quote: "Life is what happens when you're busy making other plans.",
+                    author: "John Lennon"
+                },
+                {
+                    quote: "The best way to predict the future is to create it.",
+                    author: "Peter Drucker"
+                },
+                {
+                    quote: "Success is not the key to happiness. Happiness is the key to success.",
+                    author: "Albert Schweitzer"
+                },
+                {
+                    quote: "You must be the change you wish to see in the world.",
+                    author: "Mahatma Gandhi"
+                },
+                {
+                    quote: "Do not wait to strike till the iron is hot, but make it hot by striking.",
+                    author: "William Butler Yeats"
+                },
+                {
+                    quote: "Happiness is not by chance, but by choice.",
+                    author: "Jim Rohn"
+                },
+                {
+                    quote: "Believe you can and you're halfway there.",
+                    author: "Theodore Roosevelt"
+                }
+            ]
+
+            let randomindex = Math.floor(Math.random() * 10)
+            document.getElementById('text-box').innerHTML = quotes[randomindex].quote
+            document.getElementById('author').innerHTML = quotes[randomindex].author
+        }
+    </script>
+</body>
+
+</html>

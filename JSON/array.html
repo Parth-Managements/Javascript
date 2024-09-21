@@ -27,11 +27,13 @@
     }
 
     let even = arr.filter((val) => {
-        if (val % 2 == 0) {
+        for (let i = 0; i < 10; i++) {
+            for (let j = 2; j < arr[i]; j++) {
+                if (arr[i] % j == 0) {
+                    return false
+                }
+            }
             return true
-        }
-        else {
-            return false
         }
     }
 
