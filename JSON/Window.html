@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Bom -->
+    <!-- Browser OBject MOdel 
+     window
+     screen
+     location -->
+    <button onclick="newWindow()">New Window</button>
+    <button onclick="closeWindow()">Close Window</button>
+    <script>
+        let myWindow = ""
+        function newWindow() {
+            // myWindow = window.open('String.html', "myWindow", "width=500px, height=500px")
+            myWindow = window.open('', " ", "width=500px, height=500px")
+            console.log("new window")
+        }
+
+        function closeWindow(){
+            myWindow.close()
+            console.log("close Window")
+        }
+    </script>
+
+</body>
+
+</html>

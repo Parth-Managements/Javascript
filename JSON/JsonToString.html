@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data ={
+            'name' : "Ria",
+            "age" : 22,
+            'city' :  "Ahmedabad",
+            'hobby' :[
+                {"sports" : "cricket"},
+                {'music' :"rock"},
+                {'travelling' : 'Mountains'}
+            ]
+        }
+        // document.write(data.name)
+        // document.write(data)
+        // document.write(JSON.stringify(data))
+        var data2 = '{"name" : "Sita","age":44}'
+        document.write("<br> type : ",typeof data2)
+        var obj_data = JSON.parse(data2)
+        document.write("<br> : Objet : ",obj_data)
+        document.write("<br> ==> ",obj_data.name)
+
+
+    </script>
+</body>
+</html>

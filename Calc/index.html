@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #1a1a2e;
+        }
+
+        .calculator {
+            background-color: #16213e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #display {
+            background-color: #0f3460;
+            color: #ffffff;
+            width: 92%;
+            height: 50px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border: 2px solid #1a1a2e;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 18px;
+            background-color: #e94560;
+            color: #ffffff;
+            border: 1px solid #1a1a2e;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="display">
+        <div class="buttons">
+            <button onclick="printvalue('7')">7</button>
+            <button onclick="printvalue('8')">8</button>
+            <button onclick="printvalue('9')">9</button>
+            <button onclick="printvalue('+')">+</button>
+            <button onclick="printvalue('4')">4</button>
+            <button onclick="printvalue('5')">5</button>
+            <button onclick="printvalue('6')">6</button>
+            <button onclick="printvalue('-')">-</button>
+            <button onclick="printvalue('1')">1</button>
+            <button onclick="printvalue('2')">2</button>
+            <button onclick="printvalue('3')">3</button>
+            <button onclick="printvalue('*')">*</button>
+            <button onclick="printvalue('0')">0</button>
+            <button onclick="clroutput()">C</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="printvalue('/')">/</button>
+        </div>
+    </div>
+</body>
+<!-- <script>
+    let display = document.getElementById('display')
+    let temp = ''
+    let num = ''
+    let operator = ''
+    let result = 0
+    function printvalue(given) {
+        temp += given
+        display.value += given
+    }
+    function calculate() {
+        for (let i = 0; i < temp.length; i++) {
+            // 25 + 25
+            if (temp[i] >= '0' && temp[i] <= '9') {
+                num += temp[i]
+            }
+            else if (temp[i] == '+' || temp[i] == '-' || temp[i] == '*' || temp[i] == '/') {
+                let tempnum = parseInt(num)
+                result = tempnum // 25
+                num = ''
+                operator = temp[i]
+            }
+        }
+
+        let tempnum = parseInt(num)
+        if (operator == '+') {
+            result += tempnum 
+        }
+        else if (operator == '-') {
+            result -= tempnum
+        }
+        else if (operator == '*') {
+            result *= tempnum
+        }
+        else if (operator == '/') {
+            result /= tempnum
+        }
+        else {
+            result = tempnum;
+        }
+
+        display.value = temp + '=' + result
+
+    }
+    function clroutput() {
+        display.value = ' '
+        temp = ''
+        num = ''
+        operator = ''
+        result = 0
+    }
+</script> -->
+<script>
+    let display = document.getElementById('display')
+    let temp = ''
+    function printvalue(given) {
+        temp += given
+        display.value += given
+    }
+
+    function calculate() {
+        let num1 = ''
+        let num2 = ''
+        let operator = ''
+        let chk = 0
+        let result = 0
+
+        for (let i = 0; i < temp.length; i++) {
+            if (temp[i] == '+' || temp[i] == '-' || temp[i] == '*' || temp[i] == '/') {
+                chk = i
+                operator = temp[i]
+                break
+            }
+        }
+
+        for(let i=0;i<chk;i++)
+        {
+            num1+=temp[i]
+        }
+        for(let i=chk+1 ; i<temp.length;i++)
+        {
+            num2+=temp[i]
+        }
+
+        let temp1 = parseInt(num1)
+        let temp2 = parseInt(num2)
+
+        if(operator == '+')
+        {
+            result = temp1 + temp2
+        }
+        else if(operator == '-')
+        {
+            result = temp1 - temp2
+        }
+        else if(operator == '*')
+        {
+            result = temp1 * temp2
+        }
+        else
+        {
+            result = temp1 / temp2;
+        }
+
+        display.value = temp + '=' + result
+        temp = ''
+
+    }
+</script>
+
+</html>
